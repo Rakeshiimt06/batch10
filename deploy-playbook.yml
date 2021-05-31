@@ -6,8 +6,7 @@
     apt:
       pkg: maven
       state: present
-    notify:
-    - run update
+    notify: run update
   - name: install docker
     apt:
       pkg: docker.io
