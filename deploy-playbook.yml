@@ -26,7 +26,7 @@
       state: started
       enabled: true
   - name: deploy addressbook application
-    command: sudo docker run -it -d -p 8085:8080 --name addressbook shubhamkushwah123/addressbook:1.0
+    command: sudo docker run -it -d -p 8085:8080 --name my-test-app rakeshiimt06/my-test-app:1.0
   handlers:
   - name: run update
     apt:
