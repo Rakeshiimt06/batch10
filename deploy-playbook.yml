@@ -9,7 +9,7 @@
     notify: run update
   - name: install docker
     yum:
-      name: docker.ce
+      name: docker
       state: present
   - name: start docker service
     service:
