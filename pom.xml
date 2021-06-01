@@ -80,10 +80,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit</groupId>
+            <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
-            <scope>test</scope>
+            <version>4.12</version>
         </dependency>
     </dependencies>
   
