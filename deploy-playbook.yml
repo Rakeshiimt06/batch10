@@ -3,13 +3,13 @@
   become: true
   tasks:
   - name: install maven
-    apt:
-      pkg: maven
+    yum:
+      name: maven
       state: present
     notify: run update
   - name: install docker
-    apt:
-      pkg: docker.io
+    yum:
+      name: docker.io
       state: present
   - name: start docker service
     service:
@@ -20,6 +20,6 @@
     command: sudo docker run -it -d -p 8085:8080 --name my-test-app rakeshiimt06/my-test-app:1.0
   handlers:
   - name: run update
-    apt:
+    yum:
       update_cache: yes
 
