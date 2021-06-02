@@ -61,6 +61,6 @@
         
         stage('Clean up'){
             echo "Cleaning up the workspace..."
-            cleanWs()
+            //cleanWs()
         }
     }
