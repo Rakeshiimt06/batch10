@@ -36,6 +36,7 @@
         
         stage('publish report'){
             echo " Publishing HTML report.."
+            junit 'target/surefire-reports/TEST-SampleTest.xml'
            // publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
         }
         
