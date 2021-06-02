@@ -16,7 +16,7 @@ try{
         
         stage('git checkout'){
             echo "Checking out the code from git repository..."
-            git 'https://github.com/Rakeshiimt06/CI-with-Jenkins.git'
+            git 'https://github.com/Rakeshiimt06/batch10.git'
         }
         
         stage('Build, Test and Package'){
