@@ -4,7 +4,7 @@ try{
         def mavenCMD
         def docker
         def dockerCMD
-        def tagName = "1.0"
+        def tagName = "2.0"
         
         stage('Preparation'){
             echo "Preparing the Jenkins environment with required tools..."
@@ -41,7 +41,7 @@ try{
         
         stage('Build Docker Image'){
             echo "Building docker image for addressbook application ..."
-           // sh "${dockerCMD} build -t shubhamkushwah123/addressbook:${tagName} ."
+            sh "${dockerCMD} build -t rakeshiimt06/my-test-app:${tagName} ."
         }
         
         stage("Push Docker Image to Docker Registry"){
