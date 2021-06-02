@@ -46,10 +46,10 @@ try{
         
         stage("Push Docker Image to Docker Registry"){
             echo "Pushing image to docker hub"
-           // withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
-           // sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
-           // sh "${dockerCMD} push shubhamkushwah123/addressbook:${tagName}"
-           // }
+            withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerHubPwd')]) {
+            sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
+            sh "${dockerCMD} push rakeshiimt06/my-test-app:${tagName}"
+            }
         }
         
         stage('Deploy Application'){
