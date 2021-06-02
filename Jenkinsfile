@@ -47,7 +47,7 @@ try{
         stage("Push Docker Image to Docker Registry"){
             echo "Pushing image to docker hub"
             withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerHubPwd')]) {
-            sh "${dockerCMD} login -u rakeshiimt06 -p ${dockerHubPwd}"
+            sh "${dockerCMD} login -u rakeshiimt06 -p Convent1@123"
             sh "${dockerCMD} push rakeshiimt06/my-test-app:${tagName}"
             }
         }
