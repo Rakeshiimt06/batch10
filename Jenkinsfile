@@ -11,7 +11,7 @@ try{
             mavenHome = tool name: 'maven', type: 'maven'
             mavenCMD = "${mavenHome}/bin/mvn"
             docker = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
-            dockerCMD = "$docker/docker"
+            dockerCMD = "docker"
         }
         
         stage('git checkout'){
