@@ -16,7 +16,7 @@ try{
         
         stage('git checkout'){
             echo "Checking out the code from git repository..." 	
-            git 'https://www.github.com/shubhamkushwah123/bootcamp10.git'
+            git 'https://github.com/Rakeshiimt06/batch10.git'
         }
         
         stage('Build, Test and Package'){
@@ -36,19 +36,19 @@ try{
         
         stage('publish report'){
             echo " Publishing HTML report.."
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+            //publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
         }
         
         stage('Build Docker Image'){
             echo "Building docker image for addressbook application ..."
-            sh "${dockerCMD} build -t shubhamkushwah123/addressbook:${tagName} ."
+            //sh "${dockerCMD} build -t shubhamkushwah123/addressbook:${tagName} ."
         }
         
         stage("Push Docker Image to Docker Registry"){
             echo "Pushing image to docker hub"
-            withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
-            sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
-            sh "${dockerCMD} push shubhamkushwah123/addressbook:${tagName}"
+            //withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
+            //sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
+            //sh "${dockerCMD} push shubhamkushwah123/addressbook:${tagName}"
             }
         }
         
@@ -56,7 +56,7 @@ try{
             echo "Installing desired software.."
             echo "Bring docker service up and running"
             echo "Deploying addressbook application"
-            ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible 2.9.22', inventory: '/etc/ansible/hosts', playbook: 'deploy-playbook.yml'
+            //ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible 2.9.22', inventory: '/etc/ansible/hosts', playbook: 'deploy-playbook.yml'
         }
         
         stage('Clean up'){
