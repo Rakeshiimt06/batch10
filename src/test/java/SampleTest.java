@@ -9,6 +9,7 @@ public class SampleTest {
     int b = 2;
     assertTrue(a + b== 3);
    }
+  @Test
   public void bootcampTest2(){
     int a = 4;
     int b = 2;
