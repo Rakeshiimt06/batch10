@@ -1,4 +1,4 @@
-
+try{
     node{
         def mavenHome
         def mavenCMD
@@ -64,3 +64,16 @@
             cleanWs()
         }
     }
+}
+catch(Exception err){
+    echo "Exception occured..."
+    currentBuild.result="FAILURE"
+    emailext body: 'Your build has been successful or unsuccessful', subject: 'Build failed', to: 'rakeshiimt06@gmail.com'
+}
+finally {
+    (currentBuild.result!= "ABORTED") && node("master") {
+        echo "finally gets executed and end an email notification for every build"
+        emailext body: 'Your build has been successful or unsuccessful', subject: 'Build Result', to: 'rakeshiimt06@gmail.com'
+    }
+    
+}
